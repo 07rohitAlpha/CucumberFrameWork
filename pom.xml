@@ -101,9 +101,9 @@
 						</property>
 					</properties>
 
-					<systemPropertyVariables>
+					<!--<systemPropertyVariables>
 						<headless>false</headless>
-					</systemPropertyVariables>
+					</systemPropertyVariables> -->
 					
 
 				</configuration>
