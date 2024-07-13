@@ -4,8 +4,6 @@ package stepdefinitions;
 
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
-import org.testng.asserts.SoftAssert;
-
 import factory.DriverFactory;
 import io.cucumber.java.en.*;
 import pages.AccountPage;
@@ -20,7 +18,6 @@ public class Login {
 	private LoginPage loginpage;
 	private AccountPage accountpage;
 	private CommonUtils commonUtils;
-	private SoftAssert softAssert = new SoftAssert();
 	@Given("User navigate to login page")
 	public void User_navigate_to_login_page() {
     	driver = DriverFactory.getDriver();
@@ -54,7 +51,7 @@ public class Login {
     @Then("User should get successfully logged in")
     public void user_should_get_successfully_logged_in() {
       accountpage= new AccountPage(driver); // this line remove when we use optimize code 
-      softAssert.assertTrue(accountpage.displayStatusOfEditYourAccountInformation());
+      Assert.assertTrue(accountpage.displayStatusOfEditYourAccountInformation());
     }
 
     @When("User enters invalid email address into email field")
@@ -74,7 +71,7 @@ public class Login {
    
     @Then("User should get a proper warning message about credentials mismatch")
     public void user_should_get_a_proper_warning_message_about_credentials_mismatch() {
-       softAssert.assertTrue(loginpage.getWarningMessageText().contains("Warning: No match for E-Mail Address and/or Password."));
+       Assert.assertTrue(loginpage.getWarningMessageText().contains("Warning: No match for E-Mail Address and/or Password."));
     }
 
 

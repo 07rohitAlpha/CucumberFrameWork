@@ -9,14 +9,12 @@ import pages.AccountSuccessPage;
 import pages.HomePage;
 import pages.RegisterPage;
 import utils.CommonUtils;
-import org.testng.asserts.SoftAssert;
-
 
 
 public class Register {
 	WebDriver driver;
 	private RegisterPage registerpage;
-	private SoftAssert softAssert = new SoftAssert(); 
+	
 	//private CommonUtils commonUtils;
 //	private AccountSuccessPage accountsuccesspage; // use this line optimize code 
 
@@ -73,7 +71,7 @@ public class Register {
 	@Then("User account should get created successfully")
 	public void user_account_should_get_created_successfully() {
 		AccountSuccessPage accountsuccesspage = new AccountSuccessPage(driver);// this line removed when we use Optimize code 
-		softAssert.assertEquals("Your Account Has Been Created!",accountsuccesspage.getPageHeading());
+		Assert.assertEquals("Your Account Has Been Created!",accountsuccesspage.getPageHeading());
 				
 	}
 	
@@ -85,7 +83,7 @@ public class Register {
 
 	@Then("user should get a proper warning about duplicate email")
 	public void user_should_get_a_proper_warning_about_duplicate_email() {
-		softAssert.assertTrue(registerpage.getWarningMessageText().contains("Warning: E-Mail Address is already registered!"));
+		Assert.assertTrue(registerpage.getWarningMessageText().contains("Warning: E-Mail Address is already registered!"));
 	}
 
 	@When("user dont enter any details into fileds")
@@ -106,12 +104,12 @@ public class Register {
 	public void user_should_get_proper_warning_message_for_every_mandatory_field() {
 	//	RegisterPage registerpage = new RegisterPage(driver);
 		
-		softAssert.assertTrue(registerpage.getWarningMessageText().contains("Warning: You must agree to the Privacy Policy!"));
-		softAssert.assertEquals("First Name must be between 1 and 32 characters!",registerpage.getFirstNameWarning());
-		softAssert.assertEquals("Last Name must be between 1 and 32 characters!",registerpage.getLastNameWarning());
-		softAssert.assertEquals("E-Mail Address does not appear to be valid!",registerpage.getEmailWarning());
-		softAssert.assertEquals("Telephone must be between 3 and 32 characters!",registerpage.getTelephoneWarning());
-		softAssert.assertEquals("Password must be between 4 and 20 characters!",registerpage.getPasswordWarning());
+		Assert.assertTrue(registerpage.getWarningMessageText().contains("Warning: You must agree to the Privacy Policy!"));
+		Assert.assertEquals("First Name must be between 1 and 32 characters!",registerpage.getFirstNameWarning());
+		Assert.assertEquals("Last Name must be between 1 and 32 characters!",registerpage.getLastNameWarning());
+		Assert.assertEquals("E-Mail Address does not appear to be valid!",registerpage.getEmailWarning());
+		Assert.assertEquals("Telephone must be between 3 and 32 characters!",registerpage.getTelephoneWarning());
+		Assert.assertEquals("Password must be between 4 and 20 characters!",registerpage.getPasswordWarning());
 
 	}
 
