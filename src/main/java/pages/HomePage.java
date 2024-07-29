@@ -22,7 +22,7 @@ public class HomePage {
 	}
 	
 	
-	@FindBy(xpath="//span[text()='My Account']")
+	@FindBy(xpath="//i[@class='fa fa-user']")
 	private WebElement myAccountDropMenu;
 	
 	@FindBy(linkText="Login")
