@@ -1,7 +1,9 @@
 package stepdefinitions;
 import java.util.Map;
-import org.junit.Assert;
+
 import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
+
 import factory.DriverFactory;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.*;
