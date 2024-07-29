@@ -39,9 +39,14 @@ public class HomePage {
 	
 	
 	public void clickMyAccount() {
+		try {
 		wait.until(ExpectedConditions.elementToBeClickable(myAccountDropMenu));
 		myAccountDropMenu.click();
 		
+	}catch (Exception e) {
+		e.printStackTrace();
+		
+	}
 	}
 	//==== two way one without optimize and second after optimize the code
 	public void selectLoginOption() {
