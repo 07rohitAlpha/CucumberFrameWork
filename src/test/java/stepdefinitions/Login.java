@@ -1,14 +1,7 @@
 package stepdefinitions;
 
-
-
-
-import java.time.Duration;
-
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
-
 import factory.DriverFactory;
 import io.cucumber.java.en.*;
 import pages.AccountPage;
